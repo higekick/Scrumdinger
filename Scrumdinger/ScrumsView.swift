@@ -59,9 +59,12 @@ struct ScrumsView: View {
 }
 
 struct ScrumsView_Previews: PreviewProvider {
+    @State static var scrums = DailyScrum.sampleData
     static var previews: some View {
         NavigationView {
             ScrumsView(scrums: .constant(DailyScrum.sampleData), saveAction: {})
+//            ScrumsView(scrums: Binding.constant(DailyScrum.sampleData), saveAction: {})
+//            ScrumsView(scrums: $scrums, saveAction: {})
         }
     }
 }
